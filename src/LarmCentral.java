@@ -1,29 +1,50 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class LarmCentral {
 
+    private static final String loggfil = "src/Logg";
+
     public void hanteraLarmFranFil(String filnamn) {
 
-        try (BufferedReader lasare = new BufferedReader(new FileReader(filnamn))) {
+        try (
+                BufferedReader lasare = new BufferedReader(new FileReader(filnamn));
+                BufferedWriter logg = new BufferedWriter(new FileWriter(loggfil, true))
+        ) {
 
             String line;
             while ((line = lasare.readLine()) != null) {
 
-                String[] delar =  line.split(";");
+                String[] delar = line.split(";");
                 LarmTyp typ = LarmTyp.valueOf(delar[0]);
                 String scenario = delar[1];
 
-                System.out.println("\n Larm mottaget");
+                String start = "\nLarm mottaget";
+                String info = "Typ: " + typ;
+                String scen = "Scenario: " + scenario;
 
-                LarmEnhet enhet =
-                        LarmEnhetFactory.skapaLarmEnhet(typ);
+                System.out.println(start);
+                System.out.println(info);
+                System.out.println(scen);
 
+                logg.write(start);
+                logg.newLine();
+                logg.write(info);
+                logg.newLine();
+                logg.write(scen);
+                logg.newLine();
+
+                LarmEnhet enhet = LarmEnhetFactory.skapaLarmEnhet(typ);
                 enhet.hanteraLarm(scenario);
 
-                System.out.println("Larm avslutat och loggat");
+                String slut = "Larm avslutat och loggat";
+                System.out.println(slut);
+
+                logg.write(slut);
+                logg.newLine();
+                logg.write("----------------------------------");
+                logg.newLine();
             }
+
         } catch (IOException e) {
             System.out.println("Fel vid filhantering: " + e.getMessage());
         }
