@@ -1,13 +1,8 @@
 import java.io.*;
 
-public class LarmCentral {
-    
-}
-
-
-    /*private static final String loggfil = "src/Logg";
-
-    public void hanteraLarmFranFil(String filnamn) {
+public class Logger {
+    public String loggfil = "src/Logg";
+    public void skapaLarm (String filnamn) {
 
         try (
                 BufferedReader lasare = new BufferedReader(new FileReader(filnamn));
@@ -53,4 +48,5 @@ public class LarmCentral {
         }
     }
 }
-*/
+
+
