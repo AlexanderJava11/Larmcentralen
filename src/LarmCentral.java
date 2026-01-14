@@ -1,17 +1,11 @@
 import java.io.*;
 
 public class LarmCentral {
-    
-}
-
-
-    /*private static final String loggfil = "src/Logg";
 
     public void hanteraLarmFranFil(String filnamn) {
 
         try (
                 BufferedReader lasare = new BufferedReader(new FileReader(filnamn));
-                BufferedWriter logg = new BufferedWriter(new FileWriter(loggfil, true))
         ) {
 
             String line;
@@ -29,12 +23,9 @@ public class LarmCentral {
                 System.out.println(info);
                 System.out.println(scen);
 
-                logg.write(start);
-                logg.newLine();
-                logg.write(info);
-                logg.newLine();
-                logg.write(scen);
-                logg.newLine();
+                Logger.skriv(start);
+                Logger.skriv(info);
+                Logger.skriv(scen);
 
                 LarmEnhet enhet = LarmEnhetFactory.skapaLarmEnhet(typ);
                 enhet.hanteraLarm(scenario);
@@ -42,10 +33,8 @@ public class LarmCentral {
                 String slut = "Larm avslutat och loggat";
                 System.out.println(slut);
 
-                logg.write(slut);
-                logg.newLine();
-                logg.write("----------------------------------");
-                logg.newLine();
+                Logger.skriv(slut);
+                Logger.separator();
             }
 
         } catch (IOException e) {
@@ -53,4 +42,3 @@ public class LarmCentral {
         }
     }
 }
-*/
