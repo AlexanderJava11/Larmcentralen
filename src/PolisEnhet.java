@@ -1,7 +1,7 @@
 public class PolisEnhet implements LarmEnhet {
 
     @Override
-    public void hanteraLarm(String Scenario) {
-        System.out.println("\uD83D\uDE93Polis skickas till platsen.");
+    public void hanteraLarm(String scenario) {
+        System.out.println("🚓 Polis skickas till platsen.");
     }
 }
