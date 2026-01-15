@@ -1,3 +1,4 @@
 public interface LarmEnhet {
-    void hanteraLarm(String Scenario);
+    void hanteraLarm(String scenario);
+    void avslutaInsats();   // 👈 NEW method
 }

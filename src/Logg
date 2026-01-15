@@ -16,3 +16,8 @@ Typ: BRANDKÅR
 Scenario:  Brand i en mall of scandinavia 2026-01-09
 Larm avslutat och loggat
 ------------------------------------
+Larm mottaget
+Typ: AMBULANS
+Scenario: Skadad person i park
+Status: Avslutat
+------------------------------------
