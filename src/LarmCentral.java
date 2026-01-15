@@ -3,6 +3,10 @@ import java.io.*;
 public class LarmCentral {
 
     public void hanteraLarmFranFil(String filnamn) {
+        System.out.println("Larm mottaget");
+        //enter
+        //välj mellan 3 enheter = polis, ambulans och brandkår
+
 
         try (
                 BufferedReader lasare = new BufferedReader(new FileReader(filnamn));
@@ -15,7 +19,7 @@ public class LarmCentral {
                 LarmTyp typ = LarmTyp.valueOf(delar[0]);
                 String scenario = delar[1];
 
-                String start = "\nLarm mottaget";
+                String start = " ";
                 String info = "Typ: " + typ;
                 String scen = "Scenario: " + scenario;
 

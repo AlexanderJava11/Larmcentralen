@@ -3,5 +3,6 @@ public class Main {
 
         LarmCentral larmCentral = new LarmCentral();
         larmCentral.hanteraLarmFranFil("src/scenarier");
+
     }
 }
